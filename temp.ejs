@@ -1,0 +1,104 @@
+<div class="school">
+    <div class="input-group mb-3" id="schoolInfo">
+        <input type="text" class="form-control" name="schools[]" placeholder="Enter school name" required>
+        <button type="button" class="btn btn-outline-danger" onclick="removeSchool(this)">-</button>
+    </div>
+    <div class="course-container">
+        <label class="form-label">Courses</label>
+        <div class="course">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name="courses[]" placeholder="Enter course name" required>
+                <button type="button" class="btn btn-outline-danger" onclick="removeCourse(this)">-</button>
+            </div>
+            <div class="semester-container">
+                
+            </div>
+            <button type="button" class="btn " onclick="addSemester(this)">+ Add Semester</button>
+            <div class="semester-container"></div>
+        </div>
+        <button type="button" class="btn " onclick="addCourse(this)">+ Add Course</button>
+        <hr style="width: 40rem;" class="mx-auto" style="background-color: #f0f0f0;">
+    </div>
+</div>
+
+
+
+
+<script>
+    const schoolContainer = document.getElementById('schoolContainer');
+
+    document.getElementById('addSchool').addEventListener('click', function () {
+        const school = document.createElement('div');
+        school.classList.add('mb-3');
+        school.innerHTML = `
+
+        
+
+
+
+
+
+
+
+        <!-- <label class="form-label">School</label> -->
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="schools[]" placeholder="Enter school name" required>
+            <button type="button" class="btn btn-outline-danger" onclick="removeSchool(this)">-</button>
+        </div>
+    `;
+        schoolContainer.appendChild(schoolInputGroup);
+
+        const courseContainer = document.createElement('div');
+        courseContainer.classList.add('mb-3', 'course-container');
+        courseContainer.innerHTML = `
+        <label class="form-label">Courses</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="courses[]" placeholder="Enter course name" required>
+            <button type="button" class="btn btn-outline-danger" onclick="removeCourse(this)">-</button>
+        </div>
+        <button type="button" class="btn " onclick="addSemester(this)">+ Add Semester</button>
+        <div class="semester-container"></div>
+        <button type="button" class="btn " onclick="addCourse(this)">+ Add Course</button>
+        <hr style="width: 40rem;" class="mx-auto" style="background-color: #f0f0f0;">
+    `;
+        schoolContainer.appendChild(courseContainer);
+    });
+
+    function removeSchool(button) {
+        const schoolInputGroup = button.parentElement;
+        const courseContainer = schoolInputGroup.nextElementSibling;
+        schoolInputGroup.remove();
+        courseContainer.remove();
+    }
+
+    function addCourse(button) {
+        const courseContainer = button.parentElement;
+        const inputGroup = document.createElement('div');
+        inputGroup.classList.add('input-group', 'mb-3');
+        inputGroup.innerHTML = `
+        <!-- <input type="text" class="form-control" name="courses[]" placeholder="Enter course name" required>
+        <button type="button" class="btn btn-outline-danger" onclick="removeCourse(this)">-</button> -->
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="courses[]" placeholder="Enter course name" required>
+            <button type="button" class="btn btn-outline-danger" onclick="removeCourse(this)">-</button>
+        </div>
+        <button type="button" class="btn " onclick="addSemester(this)">+ Add Semester</button>
+        <div class="semester-container"></div>
+    `;
+        courseContainer.insertBefore(inputGroup, button);
+    }
+
+    function removeCourse(button) {
+        const inputGroup = button.parentElement;
+        inputGroup.remove();
+    }
+
+    function addSemester(button) {
+        const semesterContainer = button.nextElementSibling;
+        const semesterCount = semesterContainer.children.length + 1;
+        const pTag = document.createElement('p');
+        pTag.textContent = `Semester ${semesterCount}`;
+        semesterContainer.appendChild(pTag);
+    }
+</script>
