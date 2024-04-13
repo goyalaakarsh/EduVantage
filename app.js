@@ -79,9 +79,9 @@ app.get("/university/login", (req, res) => {
 app.get("/uniprofile", (req, res) => {
     res.render("layouts/university/uniprofile.ejs");
 })
-app.post("/uniprofile", upload.single("university[logo]"), wrapAsync(async(req, res) =>{
+app.post("/uniprofile", upload.single("university[universityLogo]"), wrapAsync(async(req, res) =>{
     // const { id } = req.params;
-    const newUni = new University(req.body.product);
+    const newUni = new University(req.body);
     // newUni.University = id;
 
     let url = req.file.path;
@@ -91,6 +91,7 @@ app.post("/uniprofile", upload.single("university[logo]"), wrapAsync(async(req, 
     await newUni.save();
 
     // Redirect to the marketplace page
-    res.redirect(`/university`);
+    console.log(res);
+    res.redirect(`/`);
 }
 ))
