@@ -1,0 +1,24 @@
+.navbar {
+    min-height: 5rem;
+}
+
+.navbar-brand {
+    color: white !important; 
+    font-weight: 600;
+    margin-left: 2rem;
+}
+
+#navbar-logo {
+    color: rgb(233, 46, 46);
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.nav-link {
+
+    color: white !important;
+}
+
+#navbarSupportedContent {
+    margin-right: 2rem;
+}

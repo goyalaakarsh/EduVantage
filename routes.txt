@@ -1,0 +1,30 @@
+1. University Routes:
+   - Add New University: `POST /new-university`
+   - Edit University: `PUT /university/:universityId/edit-university`
+   - University Info: `GET /university/:universityId`
+
+2. User Authentication Routes:
+   - University Signup: `POST /signup/university`
+   - University Login: `POST /login/university`
+   - Student Signup: `POST /signup/student`
+   - Student Login: `POST /login/student`
+
+3. Student Dashboard Routes:
+   - Student Dashboard: `GET /dashboard`
+
+4. E-Cards Routes:
+   - E-Cards: `GET /e-cards`
+
+5. GPA Calculator Routes:
+   - GPA Calculator: `GET /university/:universityId/gpa-calculator`
+
+6. Academics Routes:
+   - Academics Dashboard: `GET /university/:universityId/student/:studentId/academics`
+   - Syllabus: `GET /university/:universityId/student/:studentId/academics/syllabus`
+   - List of Hours (LOH): `GET /university/:universityId/student/:studentId/academics/loh`
+   - Academic Calendar: `GET /university/:universityId/student/:studentId/academics/academic-calendar`
+   - Exam Analyser: `GET /university/:universityId/student/:studentId/academics/exam-analyser`
+   - Exam Results: `GET /university/:universityId/student/:studentId/academics/result`
+
+7. Assistant Routes:
+   - Assistant Dashboard: `GET /university/:universityId/assistant`

@@ -1,0 +1,28 @@
+<% layout("/layouts/boilerplate.ejs"); %>
+<link rel="stylesheet" href="/css/boilerplate/users/signup.css">
+
+<div class="container center-content mb-4">
+    <form class="col-6 offset-3" novalidate class="needs-validation" action="/signup/university" method="POST">
+        <h3 class="text-center mt-4">University Sign Up</h3>
+        <!-- <div class="mb-3">
+            <label for="universityID" class="form-label">University ID</label>
+            <input type="text" class="form-control" name="universityID" id="universityID" placeholder="Enter university ID" required>
+        </div> -->
+        <div class="mb-3">
+            <label for="universityName" class="form-label">University Name</label>
+            <input type="text" class="form-control" name="universityName" id="universityName" placeholder="Enter university name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter university email address" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Choose a password" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block text-center col-2 offset-5">Sign Up</button>
+        <div class="text-center mt-3">
+            <p>Already have your university registered? <a href="/university/login">Log In</a></p>
+        </div>
+    </form>
+</div>

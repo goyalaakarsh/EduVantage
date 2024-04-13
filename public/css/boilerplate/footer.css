@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+footer {
+    background-color: #D7E3FC;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: auto; 
+}
+
+.f-info {
+    max-width: 800px;
+}
+
+.f-info-socials {
+    margin-bottom: 10px;
+}
+
+.f-info-socials i {
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.f-info-links {
+    margin-top: 10px;
+}
+
+.f-info-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    cursor: pointer;
+}

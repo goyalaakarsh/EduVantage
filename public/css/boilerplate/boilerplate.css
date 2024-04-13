@@ -1,0 +1,25 @@
+body {
+    //background-image: url("C:/Users/Aakarsh Goyal/Downloads/TT Bg.png");
+    background-size: cover;
+}
+
+.container {
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 6px; 
+}
+
+::-webkit-scrollbar-track {
+    background: #ABC4FF; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #7E9FEB; 
+    border-radius: 3px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #537FE5;
+}
