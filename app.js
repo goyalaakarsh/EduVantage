@@ -1,6 +1,6 @@
-// if (process.env.NODE_ENV != "production") {
-//     require('dotenv').config();
-// }
+if (process.env.NODE_ENV != "production") {
+    require('dotenv').config();
+}
 const express = require("express");
 const router = express.Router();
 const session = require("express-session");
@@ -19,6 +19,9 @@ const { log } = require('console');
 const { storage } = require("./cloudConfig.js");
 const cloudinary = require('cloudinary').v2;
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const res = require('express/lib/response.js');
+const University = require('./models/university/university.js');
+const upload = multer({ storage: storage });
 
 main()
     .then(() => {
@@ -76,3 +79,18 @@ app.get("/university/login", (req, res) => {
 app.get("/uniprofile", (req, res) => {
     res.render("layouts/university/uniprofile.ejs");
 })
+app.post("/uniprofile", upload.single("university[logo]"), wrapAsync(async(req, res) =>{
+    // const { id } = req.params;
+    const newUni = new University(req.body.product);
+    // newUni.University = id;
+
+    let url = req.file.path;
+    let filename = req.file.filename;
+    newUni.Logo = { url, filename };
+
+    await newUni.save();
+
+    // Redirect to the marketplace page
+    res.redirect(`/university`);
+}
+))
